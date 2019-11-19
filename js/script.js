@@ -1,21 +1,20 @@
 
-const url = 'https://randomuser.me/api/?results=12';
+const url = 'https://randomuser.me/api/?results=12';//storing link for random employees as a url varible//
 const ul = document.getElementById('employees'); // Get the list where we will place our employees//
 const search = 'search';
 const submit = 'search-submit';
 const card =   'card';
 const gallery = document.getElementById('gallery');
 const name = document.getElementById('name');
-let employeeData = [];
-//const modal = document.getElementByClassName('modal');
+let employeeData = [];//setting employee data as an empty array//
 
 
 fetch(url)//using the fetch method to get the data from the specified url//
 .then(response => response.json())//starting my promise using .then to return a response from specified url//
 .then(data => data.results.map(person => { //using another promise with results.map to iterate through random employees list//
-  console.log(person);
+  //console.log(person);
   generateImage(person);// generating the random person images//
-  employeeData.push(person);
+  employeeData.push(person);//using the push()method to iterate through the array of random employees//
 })
 )
 console.log(employeeData);
@@ -39,8 +38,8 @@ gallery.append(employeeCard);
 
 }
 
-const employeeInfo = document.createElement("div");
-employeeInfo.className = "modal-container";
+const employeeInfo = document.createElement("div");//creating a div element to access the modal-container//
+employeeInfo.className = "modal-container";//adding the class name modal-container to the employee info as a varible to grab the div from the html//
 let empInfo = `
     <div class="modal">
         <button type="button" id="modal-close-btn" class="modal-close-btn"><strong>X</strong></button>
@@ -54,20 +53,74 @@ let empInfo = `
             <p class="modal-text">123 Portland Ave., Portland, OR 97204</p>
             <p class="modal-text">Birthday: 10/21/2015</p>
         </div>`
-        employeeInfo.innerHTML = empInfo;
-        gallery.append(employeeInfo);
-        employeeInfo.style.display = "none";
+        employeeInfo.innerHTML = empInfo;//accessing the employee info from the html//
+        gallery.append(employeeInfo);//appending the employee info to the DOM//
+        employeeInfo.style.display = "none";//setting the overlay to none when the page is first accesssed//
+
+
+  gallery.addEventListener("click", (e) =>{//adding an event listener to the gallery with a event.target to only access nescessary fields//
+  if(e.target.id !== "gallery"){// using if statement so if anything else on the page is clicked no action will occur//
+
+  var modal = document.querySelector(".modal");
+  var button = 'button';
+  var closeButton = document.querySelector(".modal-close-btn");
+
+        function toggleModal() {
+            modal.classList.toggle("show-modal");
+        }
+
+        function windowOnClick(event) {
+            if (event.target === modal) {
+                toggleModal();
+            }
+        }
+
+  modal.addEventListener("click", toggleModal);
+  closeButton.addEventListener("click", toggleModal);
+  window.addEventListener("click", windowOnClick);
+  console.log(e.target.textContent);
+
+  // const textContent = 'e.target.textContent';
+  //    employeeData.forEach(employee => {
+  //       if(string.includes(e.target.textContent)){
+  //
+         }
 
 
 
-gallery.addEventListener("click", (e) =>{
-  if(e.target.id !== "gallery"){
 
-    console.log(e.target.textContent);
-  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 })
+
+
+
 
 
 
