@@ -11,15 +11,17 @@
 html, body {
     width: 100%;
     max-width: 100%;
+		min-height: 100%;
 }
 
 body {
-	  font-family: fantasy, shadow; /* changed font-family*/
+	  font-family: fantasy; /* changed font-family*/
 
     text-align: center;
 		/* added linear gradient to the body background*/
 		background: linear-gradient(pink, purple);
-		 color: blue;
+		color: blue;
+
 		}
 
 		.exampletwo {
@@ -47,7 +49,6 @@ body {
 		  }
 		}
 
-}
 
 header {
     padding: 15px 5px 5px;
