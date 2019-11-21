@@ -9,8 +9,12 @@ const name = document.getElementById('name');
 let employeeData = [];//setting employee data as an empty array//
 const modalContainer = document.querySelector('modal-container');
 const modalCloseBtn = document.getElementById('modal-close-btn');
+const element = 'element';
 
-document.write("<h2>Welcome to the TreeHouse Employee List</h2>");
+document.write("<h2>THANK YOU FOR VISITING GLOBAL NET!!</h2>");
+document.createElement('element');
+
+
 
 fetch(url)//using the fetch method to get the data from the specified url//
 .then(response => response.json())//starting my promise using .then to return a response from specified url//
@@ -19,8 +23,8 @@ fetch(url)//using the fetch method to get the data from the specified url//
   generateImage(person);// generating the random person images//
   generateModal(person);
   employeeData.push(person);//using the push()method to iterate through the array of random employees//
-  showModals();
-  hideModals();
+  showModals();//calling the show modals function//
+  hideModals();//calling the hide modals function//
 })
 )
 console.log(employeeData);
@@ -81,79 +85,3 @@ function hideModals() {
     $('.modal-container').hide();
   })
 }
-
-
-
-  // gallery.addEventListener("click", (e) =>{//adding an event listener to the gallery with a event.target to only access nescessary fields//
-  //
-  // console.log(e.target.className)
-  // let elementClass = e.target.className;
-  //
-  // let employeeCard = e.target.textContent('div.card');
-  // if (elementClass.includes('card')) {
-  //   employeeCard.nextSibling.style.display = 'block';
-  // } else if (elementClass = 'modal-close-button') {
-  //   e.target.parentElement.parentElement.style.display = 'none';
-
-  // function windowOnClick(event) {
-  //            if (e.target.closest("div .card")) {
-  //                toggleModal();
-  //            }
-  //        }
-  //
-  // function toggleModal() {
-  //
-  //   modalCloseBtn.addEventListener("click", toggleModal);
-  //   closeButton.addEventListener("click", toggleModal);
-  //   window.addEventListener("click", windowOnClick);
-  //
-  //
-  // }
-
-
-  // }
-
-  // var myValue = $( "#myDivId" ).val();
-  // console.log("#myDivId");
-
-
-
-  // if(e.target.id !== "gallery"){// using if statement so if anything else on the page is clicked no action will occur//
-  //
-  // var modal = document.querySelector(".modal-container");//storing modal as a varible with the document.querySelector to access it by class className//
-  // var button = 'button';
-  // var closeButton = document.querySelector(".modal-close-btn");
-  //
-  //       function toggleModal() {
-  //           modal.classList.toggle("show-modal");
-  //       }
-  //
-  //       function windowOnClick(event) {
-  //           if (e.target.closest("div .card")) {
-  //               toggleModal();
-  //           }
-  //       }
-  //
-  // modal.addEventListener("click", toggleModal);
-  // closeButton.addEventListener("click", toggleModal);
-  // window.addEventListener("click", windowOnClick);
-  // console.log(e.target.textContent);
-
-  // const textContent = 'e.target.textContent';
-  //    employeeData.forEach(employee => {
-  //       if(string.includes(e.target.textContent)){
-  //
-         // }
-//
-// })
-
-
-
-
-
-
-  //.catch(function(error) {
-    // If there is any error you will catch them here
-  //});
-
-//}
