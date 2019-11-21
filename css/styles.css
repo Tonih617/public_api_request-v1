@@ -18,7 +18,7 @@ body {
 
     text-align: center;
 		/* added linear gradient to the body background*/
-		background: linear-gradient(pink, purple); 
+		background: linear-gradient(pink, purple);
 		 color: blue;
 		}
 
@@ -59,7 +59,8 @@ header {
 }
 
 header h1 {
-    font-size: 1.25em;
+	  font-family: fantasy;
+    font-size: 1.0em;
     color: rgba(0, 145, 204);
     margin-top: 35px;
 }
